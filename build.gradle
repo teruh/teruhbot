@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'net.dv8tion:JDA:3.8.1_437'
+    compile 'com.jagrosh:jda-utilities:2.1'
+}
+
+sourceSets {
+    main.java.srcDirs = ['src']
+    main.resources.srcDirs = ['res']
+}
