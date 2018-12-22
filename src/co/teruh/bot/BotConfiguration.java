@@ -19,8 +19,10 @@ public class BotConfiguration {
 		Properties config = new Properties();
 		config.load(ioStream);
 		
+		// Save properties
 		setToken(config.getProperty("token"));
-		
+	
+		// Close IO stream now that properties have been set
 		ioStream.close();
 	}
 	
