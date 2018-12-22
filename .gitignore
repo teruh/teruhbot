@@ -117,5 +117,6 @@ gradle-app.setting
 **/build/
 
 /res/bot.properties
+/res/textbox.png
 
 # End of https://www.gitignore.io/api/java,gradle,eclipse
