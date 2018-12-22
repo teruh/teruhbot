@@ -14,7 +14,7 @@ public class UTTextbox {
 
 	private final int IMG_WIDTH; // Width of the image
 	private final int IMG_HEIGHT; // Height of the image
-	private final String IMG_TEXT; // Text to be displayed on the caption
+	private final String IMG_TEXT; // Text to be drawn on the image
 
 	private BufferedImage image; // Image container for entire image
 	private BufferedImage sprite; // Image container for character sprite
