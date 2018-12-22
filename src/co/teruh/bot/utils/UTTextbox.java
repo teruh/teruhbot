@@ -1,5 +1,6 @@
 package co.teruh.bot.utils;
 
+import java.util.ArrayList;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -21,7 +22,7 @@ public class UTTextbox {
 	private File file;
 	private Font font;
 	
-	public UTTextbox(int width, int height, String text) throws IOException {
+	public UTTextbox(int width, int height, String text, ArrayList<String> lines) throws IOException {
 		IMG_WIDTH = width;
 		IMG_HEIGHT = height;
 		IMG_TEXT = text;
@@ -31,12 +32,12 @@ public class UTTextbox {
 				BufferedImage.TYPE_INT_RGB);
 		sprite = readImage("./res/sans.png");
 		graphics = image.createGraphics();
-		font = new Font("Comic Sans MS", Font.BOLD, 30);
+		font = new Font("Comic Sans MS", Font.BOLD, 27);
 		
-		saveImage(createImage(text));
+		saveImage(createImage(lines));
 	}
 	
-	private BufferedImage createImage(String text) {
+	private BufferedImage createImage(ArrayList<String> lines) {
 		// Draw image background
 		graphics.setColor(Color.white);
 		graphics.fillRect(0, 0, IMG_WIDTH, IMG_HEIGHT);
@@ -46,7 +47,11 @@ public class UTTextbox {
 		// Draw text
 		graphics.setColor(Color.white);
 		graphics.setFont(font);
-		graphics.drawString("* " + text, 140, 70);
+		graphics.drawString("* " + lines.get(0), 140, 50);
+		for(int i = 1 ; i < lines.size() ; i++) {
+			graphics.drawString(lines.get(i), 175, (i*40)+50);
+		}
+		
 		
 		// Draw sprite
 		graphics.drawImage(sprite, 30, 40, (IMG_WIDTH / 8), (IMG_WIDTH / 8), null);
