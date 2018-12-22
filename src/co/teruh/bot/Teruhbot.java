@@ -15,17 +15,25 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 public class Teruhbot extends ListenerAdapter {
 	
+	/**
+	 * Create a new instance of our bot
+	 * @param args command-line arguments
+	 * @throws LoginException
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws LoginException, IOException {
+		// Read bot settings
 		BotConfiguration botConfig = new BotConfiguration("bot.properties");
 		
+		// Initialize JDA-Utils command engine
 		CommandClientBuilder command = new CommandClientBuilder();
 		command.setOwnerId(botConfig.getToken());
 		command.setPrefix("t.");
 		command.addCommands(new CommandSans());
-		
 		EventWaiter waiter = new EventWaiter();
 		CommandClient client = command.build();
 		
+		// Initialize JDA bot
 		JDA jda = new JDABuilder(botConfig.getToken()).build();
 		jda.addEventListener(waiter);
 		jda.addEventListener(client);
