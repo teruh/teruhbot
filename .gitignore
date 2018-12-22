@@ -116,4 +116,6 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+/res/bot.properties
+
 # End of https://www.gitignore.io/api/java,gradle,eclipse
