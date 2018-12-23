@@ -55,13 +55,13 @@ public class CommandSans extends Command {
 		}
 
 		try {
-			new UTTextbox(578, 152, text, lines);
+			new UTTextbox(578, 152, text, "sans", lines);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// Find textbox image and send it to channel
-		image = new File("./res/textbox.png");
+		image = new File("textbox.png");
 		event.reply(image, "textbox.png");
 	}
 

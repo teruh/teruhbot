@@ -116,7 +116,7 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-./res/bot.properties
-./res/textbox.png
+/src/res/bot.properties
+*textbox.png
 
 # End of https://www.gitignore.io/api/java,gradle,eclipse

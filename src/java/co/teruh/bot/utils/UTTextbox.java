@@ -10,6 +10,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import co.teruh.bot.main.Teruhbot;
+
 public class UTTextbox {
 
 	private final int IMG_WIDTH; // Width of the image
@@ -31,13 +33,13 @@ public class UTTextbox {
 	 * @param lines  array of text to display on photo
 	 * @throws IOException
 	 */
-	public UTTextbox(int width, int height, String text, ArrayList<String> lines) throws IOException {
+	public UTTextbox(int width, int height, String text, String spriteName, ArrayList<String> lines) throws IOException {
 		IMG_WIDTH = width;
 		IMG_HEIGHT = height;
 		IMG_TEXT = text;
 
 		image = new BufferedImage(IMG_WIDTH, IMG_HEIGHT, BufferedImage.TYPE_INT_RGB);
-		sprite = readImage("./res/sans.png");
+		sprite = ImageIO.read(Teruhbot.class.getResourceAsStream("/img/" + spriteName + ".png"));
 		graphics = image.createGraphics();
 		font = new Font("Comic Sans MS", Font.BOLD, 27);
 
@@ -76,31 +78,13 @@ public class UTTextbox {
 	}
 
 	/**
-	 * Read an image and return it
-	 * 
-	 * @param resPath path to read from
-	 * @return read image
-	 */
-	private BufferedImage readImage(String resPath) {
-		BufferedImage img = null;
-
-		try {
-			img = ImageIO.read(new File(resPath));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return img;
-	}
-
-	/**
 	 * Write created BufferedImage to file
 	 * 
 	 * @param result
 	 * @throws IOException
 	 */
 	private void saveImage(BufferedImage result) throws IOException {
-		file = new File("./res/textbox.png");
+		file = new File("textbox.png");
 		ImageIO.write(result, "png", file);
 	}
 
