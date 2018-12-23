@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+apply plugin: 'java-library'
+=======
 plugins {
 	id 'java'
 	id 'application'
@@ -9,6 +12,7 @@ mainClassName = 'co.teruh.bot.main.Teruhbot'
 version '0.1'
 
 sourceCompatibility = 1.8
+>>>>>>> 81cbc072bcf672004b4bdaa552e0f8cf65e98db1
 
 repositories {
     jcenter()
@@ -20,6 +24,11 @@ dependencies {
 }
 
 sourceSets {
+<<<<<<< HEAD
+    main.java.srcDirs = ['src']
+    main.resources.srcDirs = ['res']
+}
+=======
 	main {
 		java {
 			srcDirs = ['src/java'] 
@@ -32,3 +41,4 @@ sourceSets {
 }
 
 compileJava.options.encoding = 'UTF-8'
+>>>>>>> 81cbc072bcf672004b4bdaa552e0f8cf65e98db1
