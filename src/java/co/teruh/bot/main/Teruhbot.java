@@ -33,7 +33,8 @@ public class Teruhbot {
 				.setOwnerId(botConfig.getToken())
 				.setPrefix("t.")
 				.setGame(Game.playing(GameNameGenerator.selectName()))
-				.addCommands(new CommandSans());
+				.addCommands(new CommandSans(),
+						new CommandChief());
 		EventWaiter eventWaiter = new EventWaiter();
 		CommandClient commandClient = command.build();
 
