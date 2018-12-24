@@ -6,7 +6,7 @@ plugins {
 
 mainClassName = 'co.teruh.bot.main.Teruhbot'
 
-version '0.1'
+version '0.2'
 
 sourceCompatibility = 1.8
 
