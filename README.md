@@ -7,7 +7,7 @@ Teruhbot is a bot specifically designed for my friend group's Discord server; ho
  - [JDA-Utilities](https://github.com/JDA-Applications/JDA-Utilities)
 	 - used as the command engine
  - [MySQL-Connector](https://github.com/mysql/mysql-connector-j)
- 	 - used to user data for specific modules
+ 	 - used to store user data for specific modules
 
 ## Building
 This is primarily an Eclipse project. The Eclipse `.project` file is included in this repository, so you can simply import it through the Eclipse `> Import Existing Gradle Project...` tool after cloning. 
