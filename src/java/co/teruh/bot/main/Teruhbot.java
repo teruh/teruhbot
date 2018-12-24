@@ -35,7 +35,8 @@ public class Teruhbot {
 		// Initialize JDA-Utils command engine
 		CommandClientBuilder command = new CommandClientBuilder().setOwnerId(botConfig.getToken())
 				.setPrefix(botConfig.getPrefix()).setGame(Game.playing(GameNameGenerator.selectName()))
-				.addCommands(new CommandSans(), new CommandChief(), new CommandCurrencyEnroll(db), new CommandCurrencyWorth(db));
+				.addCommands(new CommandSans(), new CommandChief(), new CommandCurrencyEnroll(db),
+						new CommandCurrencyWorth(db));
 		EventWaiter eventWaiter = new EventWaiter();
 		CommandClient commandClient = command.build();
 
