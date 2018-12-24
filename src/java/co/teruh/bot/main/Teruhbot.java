@@ -28,13 +28,15 @@ public class Teruhbot {
 		// Read bot settings
 		BotConfiguration botConfig = new BotConfiguration("bot.properties");
 
+		// Connect to MySQL database
+		Database db = new Database(botConfig.getSqlIp(), botConfig.getSqlDatabaseName(), botConfig.getSqlUser(),
+				botConfig.getSqlPassword());
+
 		// Initialize JDA-Utils command engine
-		CommandClientBuilder command = new CommandClientBuilder()
-				.setOwnerId(botConfig.getToken())
-				.setPrefix("t.")
-				.setGame(Game.playing(GameNameGenerator.selectName()))
-				.addCommands(new CommandSans(),
-						new CommandChief());
+		CommandClientBuilder command = new CommandClientBuilder().setOwnerId(botConfig.getToken())
+				.setPrefix(botConfig.getPrefix()).setGame(Game.playing(GameNameGenerator.selectName()))
+				.addCommands(new CommandSans(), new CommandChief(), new CommandCurrencyEnroll(db),
+						new CommandCurrencyWorth(db));
 		EventWaiter eventWaiter = new EventWaiter();
 		CommandClient commandClient = command.build();
 

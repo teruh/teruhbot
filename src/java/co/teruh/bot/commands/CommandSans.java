@@ -1,7 +1,7 @@
 package co.teruh.bot.commands;
 
 import java.util.ArrayList;
-
+import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 
@@ -56,7 +56,7 @@ public class CommandSans extends Command {
 
 		try {
 			new UTTextbox(578, 152, text, "sans", lines);
-		} catch (IOException e) {
+		} catch (IOException | FontFormatException e) {
 			e.printStackTrace();
 		}
 
