@@ -36,7 +36,7 @@ public class Teruhbot {
 		CommandClientBuilder command = new CommandClientBuilder().setOwnerId(botConfig.getToken())
 				.setPrefix(botConfig.getPrefix()).setGame(Game.playing(GameNameGenerator.selectName()))
 				.addCommands(new CommandSans(), new CommandChief(), new CommandCurrencyEnroll(db),
-						new CommandCurrencyWorth(db));
+						new CommandCurrencyWorth(db), new CommandItemBounce());
 		EventWaiter eventWaiter = new EventWaiter();
 		CommandClient commandClient = command.build();
 
